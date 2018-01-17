@@ -1,0 +1,8 @@
+
+<div style="text-align: center;">
+    <h1>Add Todo</h1>
+
+    <div *ngIf="todoName">{{todoName}} will be added to your todo list.</div>
+    <input type="text" [(ngModel)]="todoName" />
+    <button type="button" (click)="addTodo()">Add</button>
+</div>
