@@ -2,18 +2,19 @@ import { Component } from '@angular/core';
 import { sampleProducts, products } from './products';
 import { Http } from '@angular/http';
 import { BASE_URL } from './config'
-
+import { Router } from '@angular/router';
 @Component({
     selector: 'app',
     templateUrl: './app.component.html'
 })
 export class AppComponent {
     public todos: Todo[];
+    private router: Router;
     private http: Http;
 
-    constructor(http: Http) {
+    constructor(http: Http, router: Router) {
         this.http = http;
-
+        this.router = router;
         http.get(BASE_URL + '/Todo').subscribe(result => {
             this.todos = result.json() as Todo[];
         }, error => console.error(error));
@@ -39,6 +40,10 @@ export class AppComponent {
         }, error => console.error(error));
     }
 
+    goTo(event: Event, id: number) {
+        event.preventDefault();
+        this.router.navigate(['/todo', id]);
+    }
 }
 
 

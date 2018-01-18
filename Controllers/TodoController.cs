@@ -52,7 +52,7 @@ namespace tesz_angular.Controllers
 
             Context.SaveChanges();
 
-            return NotFound();
+            return NoContent();
         }
 
         [HttpDelete("{ID}")]

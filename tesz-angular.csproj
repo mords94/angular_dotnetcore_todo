@@ -23,8 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\directives\done.directive.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\app\config.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\app\products.ts" />
+    <TypeScriptCompile Include="ClientApp\app\directives\done.directive.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\todo.ts" />
   </ItemGroup>
 

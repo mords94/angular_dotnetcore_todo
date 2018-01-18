@@ -7,11 +7,15 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
 import { AddTodo } from './components/addtodo/addtodo.component';
+import { DoneDirective } from "./directives/done.directive";
+import { ViewTodo } from "./components/viewtodo/viewtodo.component";
 
 @NgModule({
     declarations: [
+        ViewTodo,
         AppComponent,  
         AddTodo,
+        DoneDirective
     ],
     imports: [
         CommonModule,
@@ -19,7 +23,8 @@ import { AddTodo } from './components/addtodo/addtodo.component';
         FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'todos', component: AppComponent, pathMatch: 'full' },
+            { path: 'todo/:id', component: ViewTodo },
+
         ])
     ]
 })
